@@ -4,7 +4,23 @@
 
 
 double getExpression(){
-	return 0.0;
+	double left = getTerm();
+	Token t = getToken();
+	while (true) {
+		switch (t.kind){
+		case SUM:
+			left += getTerm();
+			t = getToken();
+			break;
+		case SUB:
+			left -= getTerm();
+			t = getToken();
+			break;
+		default:
+			return left;
+			break;
+		}
+	}
 }
 
 double getTerm(){
