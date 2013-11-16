@@ -1,0 +1,15 @@
+*.user
+*.filters
+/Debug/*.tlog
+/Debug/*.manifest
+/Debug/*.obj
+/Debug/*.idb
+/Debug/*.pdb
+/Debug/*.res
+/Debug/*.ilk
+/Debug/*.lastbuildstate
+/Debug/*.log
+/Debug/*.rc
+/Debug/*.cache
+
+/*.suo
