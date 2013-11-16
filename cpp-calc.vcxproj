@@ -78,9 +78,11 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="tokenClass.cpp" />
+    <ClCompile Include="TokenStream.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tokenClass.h" />
+    <ClInclude Include="TokenStream.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

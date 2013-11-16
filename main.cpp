@@ -1,13 +1,11 @@
 #include "../std_lib_facilities.h"
 #include "tokenClass.h"
+#include "TokenStream.h"
 
 
 int main()
 try {
-	const char SUM = '+';
-	const char SUB = '-';
-	const char MUL = '*';
-	const char DIV = '/';
+
 
 	tValType lval = 0;
 	tValType rval;
