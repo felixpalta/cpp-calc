@@ -13,3 +13,4 @@ const char SUM = '+';
 const char SUB = '-';
 const char MUL = '*';
 const char DIV = '/';
+const char MODULO = '%';
