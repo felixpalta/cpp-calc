@@ -31,26 +31,31 @@ tValType getTerm(){
 		switch (t.kind){
 		case MUL:
 			left *= getPrimary();
+
 			t = getToken();
 			break;
 		case DIV:{
 			tValType right = getPrimary();
-
 			if (right == 0)
 				error("Divide by zero!");
 			left /= right;
+
+			t = getToken();
 			break;
 			}
 		case MODULO:{
 			tValType right = getPrimary();
-
 			if (right == 0)
 				error("Divide by zero!");
 			int iLeft = narrow_cast<int>(left);
 			iLeft %= narrow_cast<int>(right);
 			left = iLeft;
+
+			t = getToken();
 			break;
 			}
+		default:
+			return left;
 
 		}
 	}
