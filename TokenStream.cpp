@@ -62,7 +62,22 @@ tValType getTerm(){
 }
 
 tValType getPrimary(){
-	return 0.0;
+	Token t = getToken();
+	switch (t.kind){
+	case OPEN_BRACE:
+		{
+			tValType d = getExpression();
+			t = getToken();
+			if (t.kind != CLOSE_BRACE)
+				error("Closing brace expected");
+			return d;
+		}
+	case NUMBER:
+		return t.value;
+	default:
+		error("Primary expected");
+		return ERR_VALUE;	// not needed, because error() terminates the program
+	}
 }
 
 Token getToken(){

@@ -4,9 +4,6 @@
 typedef double tValType;
 typedef char tKindType;
 
-//constants, character literals
-
-extern const tKindType NUMBER;
 
 //class
 class Token {
