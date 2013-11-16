@@ -5,12 +5,12 @@
 
 Token getToken(void);
 
-double getExpression(void);
-double getTerm(void);
-double getPrimary(void);
+tValType getExpression(void);
+tValType getTerm(void);
+tValType getPrimary(void);
 
-const char SUM = '+';
-const char SUB = '-';
-const char MUL = '*';
-const char DIV = '/';
-const char MODULO = '%';
+const tKindType SUM = '+';
+const tKindType SUB = '-';
+const tKindType MUL = '*';
+const tKindType DIV = '/';
+const tKindType MODULO = '%';

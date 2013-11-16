@@ -9,7 +9,7 @@ try {
 
 	tValType lval = 0;
 	tValType rval;
-	char op;
+	tKindType op;
 
 	Token t;
 	t.kind = NUMBER;

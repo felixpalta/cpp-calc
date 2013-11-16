@@ -3,7 +3,7 @@
 
 
 
-double getExpression(){
+tValType getExpression(){
 	tValType left = getTerm();
 	Token t = getToken();
 	while (true) {
@@ -23,7 +23,7 @@ double getExpression(){
 	}
 }
 
-double getTerm(){
+tValType getTerm(){
 	tValType left = getPrimary();
 	Token t = getToken();
 	while (true)
@@ -56,7 +56,7 @@ double getTerm(){
 	}
 }
 
-double getPrimary(){
+tValType getPrimary(){
 	return 0.0;
 }
 
