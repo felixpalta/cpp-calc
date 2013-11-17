@@ -77,11 +77,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="grammar.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="tokenClass.cpp" />
     <ClCompile Include="TokenStream.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="grammar.h" />
     <ClInclude Include="tokenClass.h" />
     <ClInclude Include="TokenStream.h" />
   </ItemGroup>

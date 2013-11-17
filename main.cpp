@@ -1,6 +1,7 @@
 #include "../std_lib_facilities.h"
 #include "tokenClass.h"
 #include "TokenStream.h"
+#include "grammar.h"
 
 
 int main()
