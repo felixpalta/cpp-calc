@@ -5,6 +5,8 @@
 
 Token_stream ts;
 
+const String PROMPT = "> ";	//not gonna use until I learn how to backspace a character from cout
+
 int main()
 	try {
 		while (cin) {
@@ -24,6 +26,7 @@ int main()
 			else
 				ts.putback(t);
 		}
+
 }
 catch (exception& errmsg){
 	cerr << errmsg.what() << endl;
