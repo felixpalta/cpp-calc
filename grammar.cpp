@@ -11,11 +11,11 @@ tValType getExpression(){
 	Token t = ts.getToken();
 	while (true) {
 		switch (t.kind){
-		case SUM:
+		case PLUS:
 			left += getTerm();
 			t = ts.getToken();
 			break;
-		case SUB:
+		case MINUS:
 			left -= getTerm();
 			t = ts.getToken();
 			break;
@@ -79,6 +79,13 @@ tValType getPrimary(){
 		}
 	case NUMBER:
 		return t.value;
+		break;
+	case MINUS:
+		return (- getPrimary());
+		break;
+	case PLUS:
+		return getPrimary();
+		break;
 	default:
 		error("Primary expected");
 		return ERR_VALUE;	// not needed, because error() terminates the program

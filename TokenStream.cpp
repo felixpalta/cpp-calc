@@ -19,8 +19,8 @@ Token Token_stream::getToken(){
 		error("Unable to get token");
 	
 	switch (c){
-	case SUM:
-	case SUB:
+	case PLUS:
+	case MINUS:
 	case MUL:
 	case DIV:
 	case MODULO:
