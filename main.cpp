@@ -10,23 +10,19 @@ const String PROMPT = "> ";	//not gonna use until I learn how to backspace a cha
 int main()
 	try {
 		while (cin) {
-			tValType val = 0.0;
+
 			Token t = ts.getToken();
+			while (t.kind == PRINT) t = ts.getToken();	//eat extras
+			if (t.kind == QUIT){
+				//keep_window_open();
+				return 0;
+			}
+			ts.putback(t);
+			cout << "= " << getExpression() << endl;
 
-			if (t.kind == QUIT) break;
-			else ts.putback(t);
-
-			val = getExpression();
-
-			t = ts.getToken();
-
-			if (t.kind == QUIT) break;
-			if (t.kind == PRINT)
-				cout << "= " << val << endl;
-			else
-				ts.putback(t);
 		}
-
+		//keep_window_open();
+		return 0;
 }
 catch (exception& errmsg){
 	cerr << errmsg.what() << endl;
