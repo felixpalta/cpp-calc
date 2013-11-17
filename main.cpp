@@ -30,5 +30,5 @@ int main()
 }
 catch (exception& errmsg){
 	cerr << errmsg.what() << endl;
-	keep_window_open();
+	keep_window_open("~~");
 }
