@@ -6,6 +6,7 @@
 Token_stream ts;
 
 const String PROMPT = "> ";	//not gonna use until I learn how to backspace a character from cout
+const String RESULT = "= ";
 
 int main()
 	try {
@@ -18,7 +19,7 @@ int main()
 				return 0;
 			}
 			ts.putback(t);
-			cout << "= " << getExpression() << endl;
+			cout << RESULT << getExpression() << endl;
 
 		}
 		//keep_window_open();
