@@ -18,6 +18,7 @@ public:
 	Token_stream();
 	Token getToken();
 	void putback(Token t);
+	void ignore(char c);
 private:
 	Token buffer;
 	bool full;

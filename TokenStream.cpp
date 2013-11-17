@@ -65,3 +65,17 @@ void Token_stream::putback(Token t){
 	buffer = t;
 	full = true;
 }
+
+void Token_stream::ignore(char c){
+	if (full && buffer.kind == c){
+		full = false;
+		return;
+	}
+	full = false;
+
+	char ch = 0;
+	while (cin >> ch){
+		if (c == ch) 
+			return;
+	}
+}

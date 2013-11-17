@@ -10,7 +10,8 @@ const String RESULT = "= ";
 
 int main()
 	try {
-		while (cin) {
+		while (cin) 
+		try {
 
 			Token t = ts.getToken();
 			while (t.kind == PRINT) t = ts.getToken();	//eat extras
@@ -22,6 +23,12 @@ int main()
 			cout << RESULT << getExpression() << endl;
 
 		}
+
+		catch (exception& errmsg){
+			cerr << errmsg.what() << endl;
+			ts.ignore(PRINT);
+		}
+
 		//keep_window_open();
 		return 0;
 }
