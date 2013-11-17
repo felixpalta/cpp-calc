@@ -3,8 +3,8 @@
 #include "tokenClass.h"
 
 const tKindType NUMBER = '8';
-const tKindType SUM = '+';
-const tKindType SUB = '-';
+const tKindType PLUS = '+';
+const tKindType MINUS = '-';
 const tKindType MUL = '*';
 const tKindType DIV = '/';
 const tKindType MODULO = '%';
