@@ -4,20 +4,23 @@
 
 #include "grammar.h"
 
+extern Token_stream ts;
+
 tValType getExpression(){
 	tValType left = getTerm();
-	Token t = getToken();
+	Token t = ts.getToken();
 	while (true) {
 		switch (t.kind){
 		case SUM:
 			left += getTerm();
-			t = getToken();
+			t = ts.getToken();
 			break;
 		case SUB:
 			left -= getTerm();
-			t = getToken();
+			t = ts.getToken();
 			break;
 		default:
+			ts.putback(t);
 			return left;
 			break;
 		}
@@ -26,14 +29,14 @@ tValType getExpression(){
 
 tValType getTerm(){
 	tValType left = getPrimary();
-	Token t = getToken();
+	Token t = ts.getToken();
 	while (true)
 	{
 		switch (t.kind){
 		case MUL:
 			left *= getPrimary();
 
-			t = getToken();
+			t = ts.getToken();
 			break;
 		case DIV:{
 			tValType right = getPrimary();
@@ -41,7 +44,7 @@ tValType getTerm(){
 				error("Divide by zero!");
 			left /= right;
 
-			t = getToken();
+			t = ts.getToken();
 			break;
 				 }
 		case MODULO:{
@@ -52,10 +55,11 @@ tValType getTerm(){
 			iLeft %= narrow_cast<int>(right);
 			left = iLeft;
 
-			t = getToken();
+			t = ts.getToken();
 			break;
 					}
 		default:
+			ts.putback(t);
 			return left;
 
 		}
@@ -63,12 +67,12 @@ tValType getTerm(){
 }
 
 tValType getPrimary(){
-	Token t = getToken();
+	Token t = ts.getToken();
 	switch (t.kind){
 	case OPEN_BRACE:
 		{
 			tValType d = getExpression();
-			t = getToken();
+			t = ts.getToken();
 			if (t.kind != CLOSE_BRACE)
 				error("Closing brace expected");
 			return d;

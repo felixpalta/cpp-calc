@@ -8,3 +8,5 @@
 tValType getExpression(void);
 tValType getTerm(void);
 tValType getPrimary(void);
+
+const tValType ERR_VALUE = 0.0;

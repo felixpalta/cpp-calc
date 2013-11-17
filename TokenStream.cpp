@@ -1,8 +1,18 @@
 #include "../std_lib_facilities.h"
+#include "tokenClass.h"
+
 #include "TokenStream.h"
 
+Token_stream::Token_stream()
+	:buffer(0),full(false){}
 
-Token getToken(){
+Token Token_stream::getToken(){
+
+	if (full){
+		full = false;
+		return buffer;
+	}
+
 	char c;
 	cin >> c;
 	if (!cin)
@@ -16,6 +26,8 @@ Token getToken(){
 	case MODULO:
 	case OPEN_BRACE:
 	case CLOSE_BRACE:
+	case QUIT:
+	case PRINT:
 		{
 			return Token(c);
 			break;
@@ -29,6 +41,7 @@ Token getToken(){
 	case '6':
 	case '7':
 	case '8':
+	case '9':
 	case '.':
 		{
 			cin.putback(c);
@@ -43,4 +56,12 @@ Token getToken(){
 		error("Unexpected symbol");
 		break;
 	}
+}
+
+void Token_stream::putback(Token t){
+	if (full){
+		error("putback() in full buffer!");
+	}
+	buffer = t;
+	full = true;
 }

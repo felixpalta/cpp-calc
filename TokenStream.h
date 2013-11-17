@@ -2,15 +2,6 @@
 
 #include "tokenClass.h"
 
-
-Token getToken(void);
-
-tValType getExpression(void);
-tValType getTerm(void);
-tValType getPrimary(void);
-
-const tValType ERR_VALUE = 0.0;
-
 const tKindType NUMBER = '8';
 const tKindType SUM = '+';
 const tKindType SUB = '-';
@@ -19,3 +10,15 @@ const tKindType DIV = '/';
 const tKindType MODULO = '%';
 const tKindType OPEN_BRACE = '(';
 const tKindType CLOSE_BRACE = ')';
+const tKindType QUIT = 'q';
+const tKindType PRINT = ';';
+
+class Token_stream {
+public:
+	Token_stream();
+	Token getToken();
+	void putback(Token t);
+private:
+	Token buffer;
+	bool full;
+};
