@@ -13,3 +13,11 @@
 /Debug/*.cache
 
 /*.suo
+
+Debug
+
+cpp-calc-codeblocks
+*.save
+
+/precision.cpp
+/precision.h
