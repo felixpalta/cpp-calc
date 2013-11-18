@@ -49,7 +49,7 @@ try {
 			lval *= rval;
 			break;
 		case DIV:
-			if (rval == 0)
+			if (rval == 0.0)
 				error("Division by zero!");
 			lval /= rval;
 			break;
@@ -58,7 +58,7 @@ try {
 			return 1;
 		}
 	}
-	
+
 	cout << "Result: " << lval << endl;	 // screw the last operand
 }
 

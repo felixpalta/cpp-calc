@@ -36,7 +36,7 @@ tValType getTerm(){
 			break;
 		case DIV:{
 			tValType right = getPrimary();
-			if (right == 0)
+			if (right == 0.0)
 				error("Divide by zero!");
 			left /= right;
 
@@ -45,7 +45,7 @@ tValType getTerm(){
 			}
 		case MODULO:{
 			tValType right = getPrimary();
-			if (right == 0)
+			if (right == 0.0)
 				error("Divide by zero!");
 			int iLeft = narrow_cast<int>(left);
 			iLeft %= narrow_cast<int>(right);
