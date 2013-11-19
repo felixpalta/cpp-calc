@@ -81,11 +81,15 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="tokenClass.cpp" />
     <ClCompile Include="TokenStream.cpp" />
+    <ClCompile Include="VarClass.cpp" />
+    <ClCompile Include="variables.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="grammar.h" />
     <ClInclude Include="tokenClass.h" />
     <ClInclude Include="TokenStream.h" />
+    <ClInclude Include="VarClass.h" />
+    <ClInclude Include="variables.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
