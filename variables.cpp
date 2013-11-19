@@ -6,7 +6,7 @@
 vector<Variable> var_table;
 
 double get_value(string s){
-	for (int i = 0; i < (int)var_table.size(); ++i)
+	for (int i = 0; (unsigned)i < var_table.size(); ++i)
 	{
 		if (var_table[i].name == s)
 		{
@@ -17,7 +17,7 @@ double get_value(string s){
 }
 
 void set_value(string s,double val){
-	for (int i = 0; i < (int) var_table.size(); ++i){
+	for (int i = 0; (unsigned) i < var_table.size(); ++i){
 		if (var_table[i].name == s){
 			var_table[i].value = val;
 			return;
