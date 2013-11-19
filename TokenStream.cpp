@@ -1,4 +1,5 @@
 #include "../std_lib_facilities.h"
+#include "common_types.h"
 #include "tokenClass.h"
 
 #include "TokenStream.h"
@@ -28,6 +29,7 @@ Token Token_stream::getToken(){
 	case CLOSE_BRACE:
 	case QUIT:
 	case PRINT:
+	case EQUALS:
 		{
 			return Token(c);
 			break;
@@ -53,6 +55,17 @@ Token Token_stream::getToken(){
 			break;
 		}
 	default:
+		if (isalpha(c)){
+
+			string s;
+			s += c;
+			while (cin.get(c) && (isalpha(c) || isdigit(c)))
+				s+=c;
+			cin.putback(c);
+
+			if (s == DECLKEY) return Token(LET);
+			return Token(NAME,s);
+		}
 		error("Unexpected symbol");
 		break;
 	}

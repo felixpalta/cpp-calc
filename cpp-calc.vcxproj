@@ -79,12 +79,12 @@
   <ItemGroup>
     <ClCompile Include="grammar.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="tokenClass.cpp" />
     <ClCompile Include="TokenStream.cpp" />
     <ClCompile Include="VarClass.cpp" />
     <ClCompile Include="variables.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="common_types.h" />
     <ClInclude Include="grammar.h" />
     <ClInclude Include="tokenClass.h" />
     <ClInclude Include="TokenStream.h" />

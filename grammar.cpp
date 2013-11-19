@@ -1,7 +1,8 @@
 #include "../std_lib_facilities.h"
+#include "common_types.h"
 #include "tokenClass.h"
 #include "TokenStream.h"
-
+#include "variables.h"
 #include "grammar.h"
 
 extern Token_stream ts;
@@ -86,8 +87,37 @@ tValType getPrimary(){
 	case PLUS:
 		return getPrimary();
 		break;
+	case NAME:
+		return get_value(t.name);
+		break;
 	default:
 		error("Primary expected");
 		return ERR_VALUE;	// not needed, because error() terminates the program
 	}
+}
+
+tValType getStatement(){
+	Token t = ts.getToken();
+	switch (t.kind){
+	case LET:
+		return getDeclaration();
+		break;
+	default:
+		ts.putback(t);
+		return getExpression();
+	}
+}
+
+tValType getDeclaration(){
+
+	Token t = ts.getToken();
+	if (t.kind != NAME) error("Name expected");
+	
+
+	Token t2 = ts.getToken();
+	if (t2.kind != EQUALS) error("= expected");
+	tValType d = getExpression();
+
+	add_variable(t.name,d);
+	return d;
 }

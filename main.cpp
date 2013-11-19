@@ -1,4 +1,5 @@
 #include "../std_lib_facilities.h"
+#include "common_types.h"
 #include "tokenClass.h"
 #include "TokenStream.h"
 #include "grammar.h"
@@ -12,7 +13,7 @@ int main()
 	try {
 		while (cin) 
 		try {
-
+			cout << PROMPT;
 			Token t = ts.getToken();
 			while (t.kind == PRINT) t = ts.getToken();	//eat extras
 			if (t.kind == QUIT){
@@ -20,7 +21,7 @@ int main()
 				return 0;
 			}
 			ts.putback(t);
-			cout << RESULT << getExpression() << endl;
+			cout << RESULT << getStatement() << endl;
 
 		}
 
