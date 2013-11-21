@@ -28,7 +28,7 @@ void set_value(string s,double val){
 }
 
 bool is_declared(string s){
-	for (int i = 0; i < (int) var_table.size(); ++i){
+	for (int i = 0; (unsigned) i < var_table.size(); ++i){
 		if (var_table[i].name == s)
 			return true;
 	}
