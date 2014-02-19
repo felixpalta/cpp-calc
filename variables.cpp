@@ -13,7 +13,7 @@ double get_value(string s){
 			return var_table[i].value;
 		}
 	}
-	error("Undefined variable",s);
+	error("Undefined variable: ",s);
 }
 
 void set_value(string s,double val){
@@ -23,7 +23,7 @@ void set_value(string s,double val){
 			return;
 		}
 	}
-	error("Undefined variable", s);
+	error("Undefined variable: ", s);
 	return;
 }
 
