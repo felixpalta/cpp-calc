@@ -64,6 +64,7 @@ Token Token_stream::getToken(){
 			cin.putback(c);
 
 			if (s == DECLKEY) return Token(LET);
+			if (s == EXITKEY1 || s == EXITKEY2) return Token(QUIT);
 			return Token(NAME,s);
 		}
 		error("Unexpected symbol");

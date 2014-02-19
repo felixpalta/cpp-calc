@@ -17,6 +17,8 @@ const tKindType NAME = 'A';
 const tKindType	EQUALS = '=';
 
 const string	DECLKEY = "let";
+const string	EXITKEY1 = "exit";
+const string	EXITKEY2 = "quit";
 
 class Token_stream {
 public:

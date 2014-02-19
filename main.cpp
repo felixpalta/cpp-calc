@@ -22,8 +22,9 @@ int main()
 				"\t" << DECLKEY << " var = 3.5;\n"
 				"Declared variable can be then used in expressions as:\n"
 				"\t(var + 1)*2\n"
-				"In case of an error type a '" << PRINT << "' symbol, then continue typing expressions as usual.\n"
-				"Type '" << QUIT << "' to quit." << endl;
+				"In case of an error type a '" << PRINT << "' symbol, then type expressions as usual.\n"
+				"Type '" << QUIT << "', '" << EXITKEY1 << "' or '" << EXITKEY2 << "' to quit." 
+				<< endl;
 		while (cin) 
 		try {
 			cout << PROMPT;
