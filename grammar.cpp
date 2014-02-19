@@ -42,7 +42,7 @@ tValType getTerm(){
 		case DIV:{
 			tValType right = getPrimary();
 			if (right == 0.0)
-				error("Divide by zero!");
+				error("Divided by zero!");
 			left /= right;
 
 			t = ts.getToken();
@@ -51,7 +51,7 @@ tValType getTerm(){
 		case MODULO:{
 			tValType right = getPrimary();
 			if (right == 0.0)
-				error("Divide by zero!");
+				error("Divided by zero!");
 			int iLeft = narrow_cast<int>(left);
 			iLeft %= narrow_cast<int>(right);
 			left = iLeft;
